@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MailFlare — unmissable alerts for the email that matters</title>
-<meta name="description" content="MailFlare is a macOS menu bar app that shows a full-screen alert when an important Gmail message arrives — one that Focus modes and Do Not Disturb can't hide.">
+<meta name="description" data-feature="alert-styles" content="MailFlare is a macOS menu bar app that puts an alert on screen when an important Gmail message arrives: a card, a banner, or a full-screen alert that Focus modes and Do Not Disturb can't hide.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,27 +13,28 @@
   <img src="logo.png" alt="MailFlare Labs" style="width:min(100%,420px);height:auto;border-radius:0">
   <h1 class="visually-hidden">MailFlare</h1>
 </header>
-<p class="lede">A macOS menu bar app that shows an unmissable full-screen alert when an important email arrives in Gmail.</p>
+<p class="lede">A macOS menu bar app that puts an unmissable alert on screen when an important email arrives in Gmail.</p>
 <nav><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a></nav>
 
 <h2>What it does</h2>
-<p>You tell MailFlare which senders, domains, or subject keywords matter — your manager, your on-call paging service, a customer escalation list. When a matching message lands in your Gmail inbox, MailFlare draws a full-screen alert on every display showing who it's from, the subject, and a short preview, and keeps it there until you dismiss it or open the message.</p>
+<p>You tell MailFlare which <span data-feature="rule-criteria">senders, domains, or subject keywords</span> matter: your manager, your on-call paging service, a customer escalation list. When a matching message arrives in Gmail, MailFlare shows an alert with who it's from, the subject, and a short preview, and keeps it there until you dismiss it or open the message.</p>
+<p data-feature="alert-styles alert-style-default">By default the alert is a card on the display you're using. You can switch to a banner across the top of every display, or a full-screen alert on every display.</p>
 <p>Because the alert is a real app window rather than a notification, Focus modes, Do Not Disturb, and notification settings don't suppress it. That's the point: for the handful of messages you genuinely must not miss, "I had notifications off" stops being a reason.</p>
 
 <h2>How it works</h2>
 <ul>
-  <li>You sign in with your Google account. MailFlare requests <strong>read-only</strong> access to Gmail — it cannot send, modify, or delete anything.</li>
-  <li>Every 30 seconds (configurable) it asks Gmail for new unread messages and checks their sender and subject against your rules.</li>
+  <li>You sign in with your Google account. MailFlare requests <span data-feature="gmail-access"><strong>read-only</strong> access to Gmail; it cannot send, modify, or delete anything</span>.</li>
+  <li><span data-feature="poll-interval">Every 30 seconds by default (as often as every 15 seconds if you choose)</span>, it asks Gmail for new unread messages and checks their sender and subject against your rules.</li>
   <li>Everything happens on your Mac. MailFlare has no servers; your email never leaves your computer and is never shared with anyone.</li>
-  <li>Quiet hours and a pause control let you decide when alerts are allowed.</li>
+  <li data-feature="quiet-hours pause">Quiet hours keep alerts off overnight, and you can pause alerts for 30 minutes, an hour, until 9 AM tomorrow, or until you resume them.</li>
 </ul>
 
 <div class="card">
-  <strong>Privacy in one sentence:</strong> MailFlare reads message headers and previews locally to decide whether to alert you, keeps only a short list of message IDs it has already alerted on, stores your sign-in token in the macOS Keychain, and sends nothing anywhere. Full details in the <a href="privacy.html">Privacy Policy</a>.
+  <strong>Privacy in one sentence:</strong> MailFlare reads the sender, subject, and preview of new mail on your Mac to decide whether to alert you, looks at who's in your recent mail only to suggest people while you set up rules, keeps message IDs but never message content, stores your sign-in token in the macOS Keychain, and sends nothing anywhere. Full details in the <a href="privacy.html">Privacy Policy</a>.
 </div>
 
 <h2>Requirements</h2>
-<p>macOS 14 (Sonoma) or later, and a Gmail or Google Workspace account.</p>
+<p><span data-feature="min-macos">macOS 14 (Sonoma) or later</span>, and a Gmail or Google Workspace account.</p>
 
 <footer>© 2026 MailFlare Labs · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></footer>
 </main>
