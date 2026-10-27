@@ -12,12 +12,12 @@
 <nav><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a></nav>
 
 <h2>Contact</h2>
-<p>Email <a href="mailto:support@mailflarelabs.com">support@mailflarelabs.com</a>. Please include your macOS version and, if relevant, the last lines of the diagnostic log (menu bar icon → Settings → Open config file reveals the folder; the log is <code>mailflare.log</code> next to it).</p>
+<p>Email <a href="mailto:support@mailflarelabs.com">support@mailflarelabs.com</a>. Please include your macOS version and, if relevant, the last lines of the diagnostic log (Settings → Open config.json reveals the folder; the log is <code>mailflare.log</code> next to it).</p>
 
 <h2>Common questions</h2>
-<div class="card"><strong>The alert didn't appear for a message.</strong><br>Check that a rule matches the sender or subject (rules are case-insensitive; domains also match subdomains), that alerts aren't paused, and that quiet hours aren't active. Messages that arrived before MailFlare was launched never alert, by design.</div>
+<div class="card"><strong>The alert didn't appear for a message.</strong><br>Check that a rule matches the sender or subject (rules are case-insensitive; domains also match subdomains), and that <span data-feature="pause quiet-hours">alerts aren't paused and quiet hours aren't active</span>. On its first launch MailFlare stays quiet about mail already in your inbox. After that, mail that arrived while it wasn't running alerts when it starts, if the mail is less than 24 hours old.</div>
 <div class="card"><strong>Can it alert on every email?</strong><br>No — a rule with no senders, domains, or keywords never matches. MailFlare is meant for the few messages you can't miss.</div>
-<div class="card"><strong>Does it read my email?</strong><br>Only the sender, subject, and preview snippet of new unread messages, locally, to check your rules. See the <a href="privacy.html">Privacy Policy</a>.</div>
+<div class="card"><strong>Does it read my email?</strong><br>It reads the sender, subject, and preview of new unread messages on your Mac to check your rules. While setup or Settings is open, it also looks at who's in your recent mail and who you've emailed, to suggest people for your rules; that stays on your Mac and is never saved. It never reads full messages or attachments. See the <a href="privacy.html">Privacy Policy</a>.</div>
 <div class="card"><strong>How do I disconnect my Google account?</strong><br>Settings → Gmail Account → Sign Out. MailFlare revokes its access with Google and removes the token from your Keychain.</div>
 
 <footer>© 2026 MailFlare Labs · <a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a></footer>
