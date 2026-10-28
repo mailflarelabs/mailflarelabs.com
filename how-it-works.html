@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How MailFlare Works</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="icon.png" type="image/png" sizes="256x256">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MailFlare">
+<meta property="og:title" content="How MailFlare Works">
+<meta property="og:description" content="The alert styles, writing a rule and seeing which recent mail it would catch, and setting MailFlare up in five steps.">
+<meta property="og:url" content="https://mailflarelabs.com/how-it-works.html">
+<meta property="og:image" content="https://mailflarelabs.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The MailFlare Labs logo: an envelope on a laptop screen, circled by an orange flare">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<main>
+<header><h1>How it works</h1></header>
+<p class="lede">The alerts, the rules behind them, and the few minutes it takes to set up.</p>
+<nav><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+
+<h2>The alerts</h2>
+<div data-feature="alert-styles alert-style-default">
+<p>By default the alert is a card on the display you're using. You can switch to a banner across the top of every display, or a full-screen alert on every display. All three stay up until you open or dismiss the message.</p>
+<div class="gallery">
+  <figure>
+    <picture>
+      <source type="image/avif" srcset="screenshots/alert-card-dark.avif" media="(prefers-color-scheme: dark)">
+      <source type="image/avif" srcset="screenshots/alert-card-light.avif">
+      <img src="screenshots/alert-card-light.jpg" width="1440" height="900" loading="lazy" alt="A card alert in the middle of the screen: an email from Jordan Lee with the subject &quot;Can you join the customer escalation call at 3?&quot;.">
+    </picture>
+    <figcaption>Card (the default)</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <source type="image/avif" srcset="screenshots/alert-banner-dark.avif" media="(prefers-color-scheme: dark)">
+      <source type="image/avif" srcset="screenshots/alert-banner-light.avif">
+      <img src="screenshots/alert-banner-light.jpg" width="1440" height="900" loading="lazy" alt="A banner alert across the top of the screen: an email from Jordan Lee with the subject &quot;Can you join the customer escalation call at 3?&quot;.">
+    </picture>
+    <figcaption>Banner</figcaption>
+  </figure>
+  <figure>
+    <picture>
+      <source type="image/avif" srcset="screenshots/alert-fullscreen-dark.avif" media="(prefers-color-scheme: dark)">
+      <source type="image/avif" srcset="screenshots/alert-fullscreen-light.avif">
+      <img src="screenshots/alert-fullscreen-light.jpg" width="1440" height="900" loading="lazy" alt="A full-screen alert covering the screen: an email from Jordan Lee with the subject &quot;Can you join the customer escalation call at 3?&quot;.">
+    </picture>
+    <figcaption>Full screen</figcaption>
+  </figure>
+</div>
+</div>
+<p data-feature="alert-detail">The sender and subject show straight away. The preview stays hidden until you choose Show Preview, because it's written by whoever sent the email; you can turn that off in Settings, or hide the subject too.</p>
+
+<h2>Writing a rule</h2>
+<p data-feature="rule-criteria">A rule says whose mail gets through: particular senders, anyone at a domain, or mail whose subject has a word you choose. It can alert when an email matches any of these, or only when it matches all of them.</p>
+<figure class="narrow">
+  <picture>
+      <source type="image/avif" srcset="screenshots/rule-editor-dark.avif" media="(prefers-color-scheme: dark)">
+      <source type="image/avif" srcset="screenshots/rule-editor-light.avif">
+      <img src="screenshots/rule-editor-light.jpg" width="1160" height="1120" loading="lazy" alt="The Edit Rule sheet for a rule named Manager and escalations: From Jordan Lee, Subject has escalation, matching any of these. Below, Recent mail this would have alerted on lists three sample messages, with the note 3 in your last 6 messages.">
+    </picture>
+  <figcaption>As you edit, MailFlare lists the recent mail the rule would have alerted on. Screenshot with sample mail.</figcaption>
+</figure>
+<p>The list comes from your recent inbox, looked at on your Mac while Settings is open and never saved, so you can tell at a glance whether a rule is too broad or too narrow.</p>
+<p data-feature="sender-verification">For mail that's easy to fake, such as your bank's, turn on "Only alert if the sender is verified": MailFlare then alerts only when Gmail confirms the sender is real.</p>
+
+<h2>Setting it up</h2>
+<ol class="steps">
+  <li><strong>Welcome.</strong> A short look at what MailFlare does.</li>
+  <li><strong>Connect your Gmail.</strong> You sign in with Google in your browser and allow <span data-feature="gmail-access"><strong>read-only</strong> access; MailFlare can't send, change, or delete anything</span>. <span data-feature="poll-interval">From then on it checks for new mail every 30 seconds by default.</span></li>
+  <li><strong>Who should get through?</strong> MailFlare suggests people from your recent inbox and the people you write to; pick the ones you never want to miss. You can also start from a template: "My bank", "Anyone at my company", or "Outages &amp; on-call".</li>
+  <li data-feature="alert-styles"><strong>How should alerts look?</strong> Choose a card, a banner, or a full-screen alert. You can change it later in Settings.</li>
+  <li><strong>You're all set.</strong> MailFlare lives in your menu bar from here on, and you can send yourself a test alert to see it. Mail already in your inbox won't set off alerts.</li>
+</ol>
+
+<h2>Day to day</h2>
+<p data-feature="pause quiet-hours">MailFlare's menu bar menu shows when it last checked and the alerts you've had. From it you can pause alerts for a while, send a test alert, or open Settings, where you set quiet hours, edit rules, and add more Gmail accounts.</p>
+
+<p>Questions? See <a href="support.html">Support</a>, or read exactly what MailFlare reads and stores in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<footer>© 2026 MailFlare Labs · <a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="accessibility.html">Accessibility</a> · <a href="security.html">Security</a></footer>
+</main>
+</body>
+</html>

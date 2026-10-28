@@ -22,3 +22,7 @@ p.note { color: var(--muted); font-size: 14px; }
 .cta { display: flex; flex-direction: column; gap: 4px; margin: 20px 0 24px; padding: 18px 22px; border-radius: 14px; background: var(--card); border-left: 4px solid var(--accent); }
 .cta strong { font-size: 20px; }
 .cta span { color: var(--muted); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }
+.gallery figure { margin: 0; }
+figure.narrow { max-width: 480px; margin-left: auto; margin-right: auto; }
+ol.steps li { margin-bottom: 10px; }
