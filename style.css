@@ -19,3 +19,6 @@ figure { margin: 24px 0; }
 figure img { display: block; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
 figcaption { margin-top: 8px; color: var(--muted); font-size: 15px; }
 p.note { color: var(--muted); font-size: 14px; }
+.cta { display: flex; flex-direction: column; gap: 4px; margin: 20px 0 24px; padding: 18px 22px; border-radius: 14px; background: var(--card); border-left: 4px solid var(--accent); }
+.cta strong { font-size: 20px; }
+.cta span { color: var(--muted); }
