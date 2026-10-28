@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MailFlare Security</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="icon.png" type="image/png" sizes="256x256">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MailFlare">
+<meta property="og:title" content="MailFlare Security">
+<meta property="og:description" content="How to report a security problem in MailFlare, what to expect from us, what's in scope, and how the app is built to limit damage.">
+<meta property="og:url" content="https://mailflarelabs.com/security.html">
+<meta property="og:image" content="https://mailflarelabs.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The MailFlare Labs logo: an envelope on a laptop screen, circled by an orange flare">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<main>
+<header><h1>Security</h1></header>
+<p class="lede">MailFlare, by MailFlare Labs. Updated 28 October 2026.</p>
+<nav><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+
+<p>MailFlare reads your mail, so we take its security seriously and welcome reports from anyone who finds a problem. Our contact details are also published at <a href="/.well-known/security.txt">/.well-known/security.txt</a>.</p>
+
+<h2>Report a vulnerability</h2>
+<p>Email <a href="mailto:security@mailflarelabs.com">security@mailflarelabs.com</a> with a description, the MailFlare version (shown in the app's Settings window), and steps to reproduce. Please don't open a public issue or post about it before we've had a chance to fix it.</p>
+<div class="card">
+  <strong>What to expect</strong>
+  <ul>
+    <li>We acknowledge your report within 3 business days.</li>
+    <li>We aim to fix or mitigate within 30 days for issues that expose mail data or the Google sign-in token, and within 90 days for everything else.</li>
+    <li>We credit you in the release notes, if you'd like.</li>
+  </ul>
+</div>
+<p>We ask that you give us that window before disclosing publicly, and that you test only against your own Google account and your own Mac.</p>
+
+<h2>Scope</h2>
+<p>In scope:</p>
+<ul>
+  <li>The MailFlare app: Google sign-in, token storage, checking Gmail, rule matching, alert windows, configuration handling, and how the app is built.</li>
+  <li>This website, mailflarelabs.com, which is a set of static pages.</li>
+</ul>
+<p>Out of scope:</p>
+<ul>
+  <li>Google's sign-in and Gmail services themselves. Report those to Google.</li>
+  <li>Attacks that need the attacker to already run code as you on your Mac. At that point no app on the machine can protect you.</li>
+  <li>Flooding someone with matching mail to trigger many alerts.</li>
+</ul>
+<p>Once MailFlare is on the Mac App Store, security fixes go to the current release there.</p>
+
+<h2>How MailFlare limits the damage</h2>
+<ul>
+  <li data-feature="gmail-access">MailFlare asks Google for one permission, <strong>read-only</strong> Gmail access. It can never send, modify, or delete your mail.</li>
+  <li>There are no MailFlare servers. Your mail and your account data stay on your Mac.</li>
+  <li>Your Google sign-in token is kept only in the macOS Keychain. Signing out revokes it with Google.</li>
+  <li>Sign-in uses Google's recommended protections for desktop apps (PKCE and a one-time state check), with the reply received only on your own Mac.</li>
+  <li>The app runs in Apple's App Sandbox and links no third-party code, only Apple's own frameworks. Release builds will use Apple's Hardened Runtime and be notarized or signed for the App Store.</li>
+  <li>Mail text is shown as plain text, never rendered as a web page, and characters that could disguise text are stripped first.</li>
+  <li>The diagnostic log leaves out sender addresses and subjects unless you turn on verbose logging for troubleshooting.</li>
+</ul>
+<p>Behind this sits a written security review mapped to the OWASP Top 10, a threat model of every component, and automated checks that run on every code change.</p>
+
+<footer>© 2026 MailFlare Labs · <a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a> · <a href="accessibility.html">Accessibility</a></footer>
+</main>
+</body>
+</html>
