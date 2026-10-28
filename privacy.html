@@ -9,7 +9,7 @@
 <body>
 <main>
 <header><h1>Privacy Policy</h1></header>
-<p class="lede">MailFlare, by MailFlare Labs. Effective 27 October 2026.</p>
+<p class="lede">MailFlare, by MailFlare Labs. Effective 28 October 2026.</p>
 <nav><a href="index.html">Home</a><a href="support.html">Support</a></nav>
 
 <p>MailFlare is a macOS application that alerts you when an email matching rules you define arrives in your Gmail account. This policy explains what information the app accesses, what it does with it, and what it does not do. The short version: MailFlare processes your email locally on your Mac, stores almost nothing, and transmits nothing to us or to anyone else.</p>
@@ -17,12 +17,12 @@
 <h2>Information MailFlare accesses</h2>
 <p>When you sign in, MailFlare asks Google for the <code>gmail.readonly</code> permission ("View your email messages and settings"). It uses that permission in these ways, and no others:</p>
 <ul>
-  <li><strong>Listing recent unread messages</strong> (message identifiers only). By default this is unread mail from the last day. MailFlare may also run the same search narrowed to the senders, domains, and subject words in your rules, so a burst of other mail cannot hide a match.</li>
+  <li><strong>Checking for new mail</strong> by reading your mailbox's change history since the last check: the identifiers of messages that arrived or changed, and their Gmail labels (such as Unread or Inbox), not their content. If that history is unavailable, for example after MailFlare has been off for a while, it instead lists recent unread messages (message identifiers only) from the last day, and may also run the same search narrowed to the senders, domains, and subject words in your rules, so a burst of other mail cannot hide a match.</li>
   <li><strong>Reading message metadata</strong> for messages it hasn't seen before: the sender, subject, date, the short preview snippet Gmail provides, the message's identifier (used only to open the message in Apple Mail if you choose that), and Gmail's own verdict on whether the sender's address is authentic.</li>
   <li><strong>Suggesting people and previewing rules.</strong> While MailFlare's setup assistant or Settings window is open, it reads the sender, subject, and date of up to 100 inbox messages from the last 30 days, and the recipients of up to 50 messages you sent in the last 90 days. It uses them only to suggest people to add to your rules and to show which recent mail a rule would match.</li>
 </ul>
 <p>MailFlare does not download message bodies or attachments.</p>
-<p>It also reads your Gmail address once, at sign-in, to label the account in the app.</p>
+<p>It also reads your Gmail profile at sign-in, to label the account with your Gmail address, and again when it needs to restart checking from your mailbox's current position.</p>
 
 <h2>How that information is used</h2>
 <p>The sender and subject are compared against the rules you configured. If a rule matches, the sender, subject, preview, and arrival time are shown to you in the alert, with a warning when Gmail could not confirm the sender. You can also set a rule to alert only for senders Gmail confirmed. The recent mail described above is used only for suggestions and rule previews in the window you have open. MailFlare does not analyse, index, or retain the content of your email.</p>
@@ -30,7 +30,7 @@
 <h2>What is stored on your Mac</h2>
 <ul>
   <li><strong>Your rules and settings</strong>, in a configuration file inside the app's private container, plus a few preferences: your Gmail address, whether alerts are paused, and how far you got through setup.</li>
-  <li><strong>A list of message identifiers</strong> MailFlare has already alerted on (capped at 500), so it never alerts twice for the same message. It also keeps the identifiers of alerts you haven't dismissed yet, and the time of the last check, so an alert is not lost if MailFlare quits. These are opaque Gmail IDs and times, not message content.</li>
+  <li><strong>A list of message identifiers</strong> MailFlare has already alerted on (capped at 500), so it never alerts twice for the same message. It also keeps the identifiers of alerts you haven't dismissed yet, the time of the last check, and its place in your mailbox's change history, so an alert is not lost if MailFlare quits. These are opaque Gmail IDs and times, not message content.</li>
   <li><strong>Your Google sign-in token</strong>, in the macOS Keychain only. It is never written to a file.</li>
   <li><strong>A diagnostic log</strong> recording when alerts were shown and dismissed and any errors, kept locally to help you troubleshoot. It records message identifiers, not message content, unless you turn on verbose logging for troubleshooting.</li>
 </ul>
