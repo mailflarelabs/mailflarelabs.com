@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MailFlare Accessibility</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="icon.png" type="image/png" sizes="256x256">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MailFlare">
+<meta property="og:title" content="MailFlare Accessibility">
+<meta property="og:description" content="How MailFlare works with VoiceOver, the keyboard, and Reduce Motion, what isn't there yet, and how to report a problem.">
+<meta property="og:url" content="https://mailflarelabs.com/accessibility.html">
+<meta property="og:image" content="https://mailflarelabs.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The MailFlare Labs logo: an envelope on a laptop screen, circled by an orange flare">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<main>
+<header><h1>Accessibility</h1></header>
+<p class="lede">MailFlare, by MailFlare Labs. Updated 28 October 2026.</p>
+<nav><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></nav>
+
+<p>An alert you can't perceive or act on is no alert at all, so MailFlare is built to work with VoiceOver, the keyboard, and the macOS accessibility settings. We measure it against the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA, where those guidelines apply to a Mac app. This page says what works today, what doesn't yet, and how to tell us about a problem.</p>
+
+<h2>What MailFlare supports</h2>
+<ul>
+  <li><strong>VoiceOver.</strong> Buttons and controls in the setup assistant, Settings, the menu, and alerts carry spoken labels, and purely decorative images are hidden from VoiceOver. An automated check on every code change flags images that lack a spoken label.</li>
+  <li data-feature="alert-styles"><strong>Keyboard.</strong> Setup and Settings use standard macOS controls, so they work with Tab and Space when Full Keyboard Access is on. In an alert, Return opens the message, Esc dismisses it, and Space shows what's hidden. Keys are ignored for the first three-quarters of a second, so a keystroke you were already typing can't dismiss an alert by accident. The full-screen alert takes the keyboard straight away; the card and banner leave your typing alone, so click one of them to use these keys.</li>
+  <li data-feature="alert-styles"><strong>Reduce Motion and flashing.</strong> When a card or banner appears, the screen flashes amber once, fading out in about half a second; the full-screen alert doesn't flash. With Reduce Motion on, the flash is skipped entirely and the setup assistant's animations become simple fades. A single flash stays well within WCAG's limit of three flashes a second.</li>
+  <li><strong>Contrast.</strong> An automated check on every code change measures alert text against the WCAG AA minimum of 4.5:1, with the one exception listed below.</li>
+  <li data-feature="sender-verification"><strong>Not by colour alone.</strong> Warnings are written out, not only coloured: an alert from a sender Gmail couldn't verify says "Sender not verified: this address may be forged".</li>
+</ul>
+
+<h2>This website</h2>
+<p>Every page uses headings in order, every image has a text description, and the site follows your Mac's light or dark appearance. Text meets WCAG AA contrast in both: the lowest ratio, for secondary text, is 4.66:1. Nothing on the site moves or flashes.</p>
+
+<h2>Known limitations</h2>
+<ul>
+  <li data-feature="alert-styles"><strong>VoiceOver isn't told when a card or banner appears.</strong> Those styles don't take focus, so VoiceOver doesn't announce them. If you rely on VoiceOver, choose the full-screen alert in Settings, which takes focus when it appears.</li>
+  <li><strong>One alert hint is just under the contrast minimum.</strong> The small key hint at the bottom of the default alert ("Esc dismisses · Return opens") measures 4.44:1 against the 4.5:1 target. New alert colours that bring all alert text to 7:1 or better are in progress.</li>
+  <li><strong>Alert text doesn't grow with a larger text setting.</strong> Alert text sizes are fixed; they are already large, but they don't follow macOS text-size settings.</li>
+  <li><strong>Increase Contrast and Reduce Transparency aren't applied to alerts yet.</strong> Alerts use a nearly opaque dark panel either way.</li>
+  <li><strong>The full manual review isn't finished.</strong> Before each App Store release we go through setup, Settings, the menu, and every alert style with VoiceOver and with the keyboard alone. That review hasn't been completed for the current version.</li>
+</ul>
+
+<h2>Report a problem</h2>
+<p>If something in MailFlare or on this site gets in your way, email <a href="mailto:support@mailflarelabs.com?subject=Accessibility">support@mailflarelabs.com</a> with "Accessibility" in the subject. Please tell us what you were trying to do, which assistive technology or setting you use, and your macOS version. Accessibility problems are fixed as bugs, not treated as feature requests.</p>
+
+<footer>© 2026 MailFlare Labs · <a href="index.html">Home</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></footer>
+</main>
+</body>
+</html>
